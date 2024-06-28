@@ -1,0 +1,33 @@
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  color: $color-font-aside;
+  transition: all ease 0.3s;
+}
+
+.icon-dashboard,
+.icon-income {
+  stroke-width: 2;
+  stroke: currentColor;
+}
+
+.icon-customers {
+  fill: currentColor;
+  color: $color-font-aside;
+}
+
+.icon-customers .first-path {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.icon-arrow-aside {
+  margin-left: auto;
+  stroke: $color-font-aside;
+  stroke-width: 3;
+  transition: all ease 0.3s;
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}

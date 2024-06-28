@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+  </head>
+  <body> 
+    <div class="container">
+      <div class="dashboard"> 
+        <aside class="sidebar"><a class="sidebar__logo" href="#"><img class="sidebar__logo-img" src="./images/dist/logo-icon.svg" alt="dashboard logo">
+            <div class="sidebar__logo-info">
+              <h1 class="sidebar__title">Dashboard</h1><span class="sidebar__version">v0.1 </span>
+            </div></a>
+          <nav class="sidebar__nav"> 
+            <ul class="sidebar__list"> 
+              <li class="sidebar__item"><a class="sidebar__link" href="#">
+                  <svg class="icon icon-dashboard" width="24px" height="24px">
+                    <use href="./images/dist/sprite.svg#dashboard"></use>
+                  </svg>
+                  <p class="sidebar__link-text">Dashboard</p></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#">
+                  <svg class="icon icon-product" width="24px" height="24px">
+                    <use href="./images/dist/sprite.svg#product"></use>
+                  </svg>
+                  <p class="sidebar__link-text">Product</p>
+                  <svg class="icon-arrow-aside" width="16px" height="16px">
+                    <use href="./images/dist/sprite.svg#arrow-aside"></use>
+                  </svg></a></li>
+              <li class="sidebar__item--active"><a class="sidebar__link" href="#">
+                  <svg class="icon icon-customers" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path class="first-path" d="M20 2.667h-8c-6.667 0-9.333 2.667-9.333 9.333v8c0 5.040 1.52 7.8 5.147 8.827 0.293-3.467 3.853-6.2 8.187-6.2s7.893 2.733 8.187 6.2c3.627-1.027 5.147-3.787 5.147-8.827v-8c0-6.667-2.667-9.333-9.333-9.333zM16 18.893c-2.64 0-4.773-2.147-4.773-4.787s2.133-4.773 4.773-4.773c2.64 0 4.773 2.133 4.773 4.773s-2.133 4.787-4.773 4.787z"></path>
+                    <path class="second-path" d="M20.001 30.333h-8c-1.76 0-3.227-0.173-4.467-0.547-0.453-0.133-0.747-0.573-0.72-1.040 0.333-3.987 4.373-7.12 9.187-7.12s8.84 3.12 9.187 7.12c0.040 0.48-0.253 0.907-0.72 1.040-1.24 0.373-2.707 0.547-4.467 0.547zM8.961 28.080c0.88 0.173 1.88 0.253 3.040 0.253h8c1.16 0 2.16-0.080 3.040-0.253-0.707-2.56-3.627-4.453-7.040-4.453s-6.333 1.893-7.040 4.453z"></path>
+                    <path class="third-path" d="M16 19.893c-3.187 0-5.773-2.6-5.773-5.787s2.587-5.773 5.773-5.773c3.187 0 5.773 2.587 5.773 5.773s-2.587 5.787-5.773 5.787zM16 10.333c-2.080 0-3.773 1.693-3.773 3.773 0 2.093 1.693 3.787 3.773 3.787s3.773-1.693 3.773-3.787c0-2.080-1.693-3.773-3.773-3.773z"></path>
+                  </svg>
+                  <p class="sidebar__link-text">Customers </p>
+                  <svg class="icon-arrow-aside" width="16px" height="16px">
+                    <use href="./images/dist/sprite.svg#arrow-aside"></use>
+                  </svg></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#">
+                  <svg class="icon icon-income" width="24px" height="24px">
+                    <use href="./images/dist/sprite.svg#income"></use>
+                  </svg>
+                  <p class="sidebar__link-text">Income </p>
+                  <svg class="icon-arrow-aside" width="16px" height="16px">
+                    <use href="./images/dist/sprite.svg#arrow-aside"></use>
+                  </svg></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#">
+                  <svg class="icon icon-promote" width="24px" height="24px">
+                    <use href="./images/dist/sprite.svg#promote"></use>
+                  </svg>
+                  <p class="sidebar__link-text">Promote </p>
+                  <svg class="icon-arrow-aside" width="16px" height="16px">
+                    <use href="./images/dist/sprite.svg#arrow-aside"></use>
+                  </svg></a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#">
+                  <svg class="icon icon-help" width="24px" height="24px">
+                    <use class="use" href="./images/dist/sprite.svg#help"></use>
+                  </svg>
+                  <p class="sidebar__link-text">Help</p>
+                  <svg class="icon-arrow-aside" width="16px" height="16px">
+                    <use href="./images/dist/sprite.svg#arrow-aside"></use>
+                  </svg></a></li>
+            </ul>
+            <div class="sidebar__user"><img class="sidebar__avatar" src="./images/dist/avatar.png" alt="Evano's avatar">
+              <div class="sidebar__user-info"><span class="sidebar__user-info-name">Evano </span><span class="sidebar__user-info-role">Project Manager </span></div>
+            </div>
+          </nav>
+        </aside>
+        <main class="main">
+          <header class="main__header"> 
+            <h2 class="main__title">Hello Evano 👋🏼,</h2>
+          </header>
+          <section class="customers" style="display: none">
+            <table class="customers__table hover" id="myTable"> 
+              <caption class="customers__table-title">
+                <h3 class="customers__title">All Customers </h3>
+                <p class="customers__subtitle">Active Members</p>
+              </caption>
+              <thead class="customers__table-head">
+                <tr class="customers__row"> 
+                  <th class="customers__header">Customer Name</th>
+                  <th class="customers__header">Company</th>
+                  <th class="customers__header">Phone Number</th>
+                  <th class="customers__header">Email</th>
+                  <th class="customers__header">Country</th>
+                  <th class="customers__header">Status</th>
+                </tr>
+              </thead>
+              <tbody class="customers__table-body"> 
+                <tr class="customers__row"> 
+                  <td class="customers__name">Jane Cooper </td>
+                  <td class="customers__company">Microsoft </td>
+                  <td class="customers__phone">(225) 555-0118</td>
+                  <td class="customers__email">jane@microsoft.com</td>
+                  <td class="customers__country">United States</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--active">Active</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Floyd Miles </td>
+                  <td class="customers__company">Yahoo </td>
+                  <td class="customers__phone">(205) 555-0100</td>
+                  <td class="customers__email">floyd@yahoo.com</td>
+                  <td class="customers__country">Kiribati</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--inactive">Inactive</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Ronald Richards </td>
+                  <td class="customers__company">Adobe </td>
+                  <td class="customers__phone">(302) 555-0107</td>
+                  <td class="customers__email">ronald@adobe.com</td>
+                  <td class="customers__country">Israel</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--inactive">Inactive</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Marvin McKinney </td>
+                  <td class="customers__company">Tesla </td>
+                  <td class="customers__phone">(252) 555-0126</td>
+                  <td class="customers__email">marvin@tesla.com</td>
+                  <td class="customers__country">Iran</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--active">Active</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Jerome Bell</td>
+                  <td class="customers__company">Google </td>
+                  <td class="customers__phone">(629) 555-0129</td>
+                  <td class="customers__email">jerome@google.com</td>
+                  <td class="customers__country">Réunion</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--active">Active</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Kathryn Murphy </td>
+                  <td class="customers__company">Microsoft </td>
+                  <td class="customers__phone">(406) 555-0120</td>
+                  <td class="customers__email">kathryn@microsoft.com</td>
+                  <td class="customers__country">Curaçao</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--active">Active</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Jacob Jones</td>
+                  <td class="customers__company">Yahoo </td>
+                  <td class="customers__phone">(208) 555-0112</td>
+                  <td class="customers__email">jacob@yahoo.com</td>
+                  <td class="customers__country">Brazil</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--active">Active</span></td>
+                </tr>
+                <tr class="customers__row"> 
+                  <td class="customers__name">Kristin Watson</td>
+                  <td class="customers__company">Facebook </td>
+                  <td class="customers__phone">(704) 555-0127</td>
+                  <td class="customers__email">kristin@facebook.com</td>
+                  <td class="customers__country">Åland Islands</td>
+                  <td class="customers__status"><span class="customers__status-text customers__status-text--inactive">Inactive</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+    <script src="./js/main.min.js"></script>
+  </body>
+</html>

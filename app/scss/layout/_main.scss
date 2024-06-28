@@ -1,0 +1,26 @@
+.main {
+  padding: 41px 93px 219px 39px;
+  flex-grow: 1;
+  max-width: 100%;
+  @media (max-width: 1220px) {
+    padding-right: 39px;
+  }
+  @media (max-width: 1100px) {
+    padding: 41px 15px;
+    max-width: 90%;
+  }
+  @media (max-width: 700px) {
+    max-width: 89%;
+  }
+   @media (max-width: 600px) {
+    max-width: 88%;
+  }
+   @media (max-width: 500px) {
+    max-width: 87%;
+  }
+  &__title {
+    font-size: 24px;
+    padding-left: 32px;
+    margin-bottom: 90px;
+  }
+}

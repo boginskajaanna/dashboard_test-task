@@ -1,0 +1,234 @@
+.customers {
+  max-width: 100%;
+  &__table-title {
+    text-align: left;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 0;
+    top: -80px;
+    @media (max-width: 530px) {
+      top: -126px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    color: $color-font-dark;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 7px;
+  }
+
+  &__subtitle {
+    color: $color-font-subtitle;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  &__status-text {
+    text-align: center;
+  }
+
+  &__status-text--active {
+    display: inline-block;
+    padding: 3px 17px;
+    color: $color-font-active;
+    background-color: rgba($color: $color-font-subtitle, $alpha: 0.38);
+    border: 1px solid $color-border-active;
+    border-radius: 4px;
+  }
+
+  &__status-text--inactive {
+    display: inline-block;
+    padding: 3px 11px;
+    color: $color-font-inactive;
+    background-color: $color-bcg-inactive;
+    border: 1px solid $color-font-inactive;
+    border-radius: 4px;
+  }
+}
+
+#myTable_wrapper {
+  outline-color: green;
+  background-color: $color-bcg-primery;
+  border-radius: 30px;
+  padding: 30px 6px 40px 72px;
+  width: 100%;
+  max-width: 100%;
+  @media (max-width: 1160px) {
+    padding-left: 10px;
+  }
+  @media (max-width: 1070px) {
+    overflow-x: auto;
+    max-width: 970px;
+  }
+}
+
+#myTable {
+  width: 100% !important;
+  margin: 0;
+  position: relative;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  @media (max-width: 1070px) {
+    width: 958px !important;
+  }
+}
+
+#myTable thead tr th {
+  border-bottom: 1px solid $color-pagination-border;
+  padding: 14px 0;
+}
+
+#myTable tbody tr td {
+  padding: 20px 0;
+  border-bottom: 1px solid $color-pagination-border;
+}
+
+#myTable thead tr th:last-child,
+#myTable tbody tr td:last-child {
+  text-align: center;
+}
+
+#myTable td:not(:last-child),
+#myTable th:not(:last-child) {
+  padding-right: 12px;
+}
+
+.dt-column-title {
+  color: $color-font-thead;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.dt-column-order {
+  display: none;
+}
+
+div.dt-container div.dt-layout-cell {
+  padding: 0 !important;
+}
+
+div.dt-container .dt-layout-row:first-child div.dt-layout-cell.dt-end {
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 530px) {
+    height: 130px;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+}
+
+.dt-layout-table {
+  margin-bottom: 30px;
+}
+
+.dt-layout-row:last-child {
+  @media (max-width: 850px) {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#dt-search-0 {
+  border: none;
+  padding: 7px 8px 7px 40px;
+  background-color: $color-bcg-search;
+  color: $color-font-thead;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  width: 216px;
+  height: 38px;
+  margin-right: 21px;
+  margin-top: 14px;
+  margin-bottom: 35px;
+  @media (max-width: 530px) {
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+}
+
+.dt-search {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 21px;
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/dist/search.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media (max-width: 530px) {
+      top: 8px;
+    }
+  }
+}
+
+.dt-input::placeholder {
+  color: $color-font-thead;
+  font-size: 12px;
+}
+
+.dt-search label {
+  //visually hidden
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.dt-paging {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  @media (max-width: 840px) {
+    // margin-bottom: 30px;
+  }
+ 
+}
+
+#myTable_wrapper .dt-paging .dt-paging-button {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-pagination-bcg;
+  color: $color-pagination-font;
+  border: 1px solid $color-pagination-border;
+  padding: 6px 8px;
+  height: 24px;
+  min-width: 25px;
+  // margin-left: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#myTable_wrapper .dt-paging .dt-paging-button.current {
+  background-color: $color-item-active;
+  color: $color-bcg-primery !important;
+  border: 1px solid $color-item-active;
+}
+
+#myTable_info {
+  color: $color-font-thead;
+  letter-spacing: -0.01;
+  @media (max-width: 850px) {
+    margin-bottom: 8px;
+  }
+}
+
+div.dt-container .dt-paging .ellipsis {
+  padding: 0;
+}
